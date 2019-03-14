@@ -10,7 +10,7 @@ function persistAWSCredentials(credentialData) {
     "aws_session_token": credentialData['SessionToken']
   };
   util.promisify(fs.writeFile)(shared_config_file_loc, ini.stringify(aws_config, { section: 'saml' }));
-  return credentialData;
+  return JSON.stringify(credentialData);
 }
 
 module.exports = { persistAWSCredentials }

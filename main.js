@@ -14,7 +14,6 @@ app.on('ready', () => {
       }
     })
     .then(persistAWSCredentials)
-    .then(JSON.stringify)
     .then(console.log)
     .finally(app.quit)
 });
