@@ -4,7 +4,6 @@ const ini = require('ini');
 const shared_config_file_loc = require('./options').shared_config_file
 
 function persistAWSCredentials(credentialData) {
-  console.log("Test");
   var aws_config = {
     "aws_access_key_id": credentialData['AccessKeyId'],
     "aws_secret_access_key": credentialData['SecretAccessKey'],
