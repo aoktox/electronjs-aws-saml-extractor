@@ -4,11 +4,13 @@ const yargs = require('yargs')
   .demandOption('credential-file', 'The location where the temporary credentials will be stored')
   .demandOption('principal-arn', 'The ARN of the principal. This identifies the IDP')
   .demandOption('role-arn', 'The ARN of the role to assume')
+  .demandOption('shared-config-file', 'The shared config file (~/.aws/credentials)')
   .parse(process.argv.slice(1))
 
-module.exports = { 
-  url: yargs.url, 
-  config_file: yargs["credential-file"] ,
+module.exports = {
+  url: yargs.url,
+  config_file: yargs["credential-file"],
+  shared_config_file: yargs["shared-config-file"],
   principal_arn: yargs["principal-arn"],
   role_arn: yargs["role-arn"]
 }

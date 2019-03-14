@@ -1,7 +1,6 @@
 const temprary_credential_location = require('./options').config_file
 const util = require("util");
 const fs = require('fs');
-
 /**
  * 
  * @param {*} credentialData 

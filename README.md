@@ -35,7 +35,11 @@ To build the binary run `npm run package:linux` (only linux works right now, PR'
 
 ## Running
 
-There are four options which are required to make the application work:
+There are five options which are required to make the application work:
+
+```sh
+./out/electronjs-aws-saml-extractor-linux-x64/electronjs-aws-saml-extractor --url "https://accounts.google.com/o/saml2/initsso?idpid=CHANGEME&spid=CHANGEME&forceauthn=false" --shared-config-file ~/.aws/credentials --credential-file /tmp/aws-credentials --principal-arn CHANGEME --role-arn CHANGEME
+```
 
 ### Options
 
@@ -43,6 +47,7 @@ There are four options which are required to make the application work:
 * `credential-file` - The path to the file which will contain your temporary credentials.
 * `principal-arn` - The ARN of the SAML IDP. This is in the SAML Response data, so snag it there if your IT admin won't tell it to you.
 * `role-arn` The ARN of the role to assume. Again this will be in the SAML Response if you don't know it
+* `shared-config-file` The shared config file for AWS CLI (usually : `~/.aws/credentials`)
 
 ### Google Apps example
 
